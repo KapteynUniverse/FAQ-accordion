@@ -1,0 +1,222 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
+/* RESET */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* BASE STYLES */
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--light-pink);
+  color: var(--dark-purple);
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+main {
+  position: relative;
+}
+
+img {
+  object-fit: cover;
+}
+
+.card {
+  position: absolute;
+  background-color: var(--white);
+  padding: 2.5em;
+  border-radius: 0.625em;
+  min-width: 40ch;
+  max-width: 62ch;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+}
+
+h2 {
+  position: relative;
+  font-weight: var(--fw-700);
+  margin-left: 1.125em;
+  font-size: 3rem;
+  display: inline-block;
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  background-image: url(./assets/images/icon-star.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 0.75em;
+  height: 0.75em;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -1.125em;
+}
+
+details {
+  position: relative;
+}
+
+details::after {
+  content: "";
+  display: block;
+  border-bottom: 2px solid var(--light-pink);
+  margin: 1.5em 0;
+  width: 100%;
+}
+
+details:nth-child(5)::after {
+  border: none;
+}
+
+details[open] > summary::after {
+  content: url(./assets/images/icon-minus.svg);
+}
+
+details::details-content {
+  block-size: 0;
+  transition: block-size 0.3s;
+  transition-behavior: allow-discrete;
+}
+
+details[open]::details-content {
+  block-size: auto;
+}
+
+summary {
+  display: block;
+  font-weight: var(--fw-600);
+  margin: 1em 0;
+  padding-right: 2em;
+  transition: color 0.3s ease-in;
+}
+
+summary:hover {
+  color: #ad28eb;
+  cursor: pointer;
+}
+
+summary::after {
+  display: inline-block;
+  content: url(./assets/images/icon-plus.svg);
+}
+details[open] > summary::after,
+summary::after {
+  position: absolute;
+  top: -3%;
+  right: 0;
+}
+
+p {
+  color: var(--grayish-purple);
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    font-size: 0.75rem;
+  }
+  img {
+    height: 10em;
+  }
+  .card {
+    padding: 1.5em;
+  }
+}
