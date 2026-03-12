@@ -46,9 +46,9 @@ Users should be able to:
 
 While building this project, I improved my understanding of:
 
-- The Details disclosure element : I learned how to use the semantic <details> element to create accessible expandable sections without relying on JavaScript. It provides built-in functionality for toggling content visibility and works well for components like FAQs or collapsible information panels.
-- The Picture element : I gained a better understanding of the <picture> element for responsive images. By combining <source> element with different media conditions, it allows the browser to select the most appropriate image depending on the device screen size or resolution.
-- Interpolate-size : I learned about the interpolate-size CSS property and how it can help animate elements with intrinsic sizes, such as those inside a <details> element. This makes it possible to create smoother expand/collapse animations when content height changes dynamically.
+- The Details disclosure element : I learned how to use the semantic `<details>` element to create accessible expandable sections without relying on JavaScript. It provides built-in functionality for toggling content visibility and works well for components like FAQs or collapsible information panels.
+- The Picture element : I gained a better understanding of the <picture> element for responsive images. By combining `<source>` element with different media conditions, it allows the browser to select the most appropriate image depending on the device screen size or resolution.
+- Interpolate-size : I learned about the interpolate-size CSS property and how it can help animate elements with intrinsic sizes, such as those inside a `<details>` element. This makes it possible to create smoother expand/collapse animations when content height changes dynamically.
 
 ### Useful resources
 
